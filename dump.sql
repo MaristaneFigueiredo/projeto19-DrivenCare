@@ -102,3 +102,22 @@ ALTER TABLE "appointments" ADD CONSTRAINT "appointments_fk1" FOREIGN KEY ("patie
 
 
 
+-- CREATE TYPE “userType” AS ENUM (‘p’,’d’)
+
+-- CHECK(type IN (‘p’, ’d’))
+
+-- CREATE TABLE users (
+--     id integer,
+--     description box
+-- );
+
+-- CREATE TABLE "users" (
+-- 	"id" serial NOT NULL,
+-- 	"name" varchar(100) NOT NULL,
+-- 	"email" TEXT NOT NULL UNIQUE,
+-- 	"password" TEXT NOT NULL,
+-- 	"typeUser" userType NOT NULL,
+-- 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
+-- 	"updateAt" TIMESTAMP NOT NULL,
+-- 	CONSTRAINT "users_pk" PRIMARY KEY ("id")
+-- );
