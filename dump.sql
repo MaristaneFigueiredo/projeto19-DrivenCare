@@ -61,18 +61,17 @@ CREATE TABLE "locations" (
 );
 
 
-
-CREATE TABLE "schedules" (
+CREATE TABLE schedules (
 	"id" serial NOT NULL,
+	"doctorId" int NOT NULL,
 	"date" DATE NOT NULL,
-	"time" TIME NOT NULL,
+	"timeInitial" TIME NOT NULL,
+	"timeEnd" bigint NOT NULL,
 	"avaiable" BOOLEAN NOT NULL DEFAULT 'true',
-	"doctorId" integer NOT NULL,
-	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
-	"updateAt" TIMESTAMP,
+	"createdAt" TIMESTAMP NOT NULL DEFAULT NOW(),
+	"updatedAt" TIMESTAMP,
 	CONSTRAINT "schedules_pk" PRIMARY KEY ("id")
-) ;
-
+);
 
 
 CREATE TABLE "appointments" (
@@ -100,24 +99,4 @@ ALTER TABLE "schedules" ADD CONSTRAINT "schedules_fk0" FOREIGN KEY ("doctorId") 
 ALTER TABLE "appointments" ADD CONSTRAINT "appointments_fk0" FOREIGN KEY ("scheduleId") REFERENCES "schedules"("id");
 ALTER TABLE "appointments" ADD CONSTRAINT "appointments_fk1" FOREIGN KEY ("patientId") REFERENCES "patients"("id");
 
-
-
--- CREATE TYPE “userType” AS ENUM (‘p’,’d’)
-
--- CHECK(type IN (‘p’, ’d’))
-
--- CREATE TABLE users (
---     id integer,
---     description box
--- );
-
--- CREATE TABLE "users" (
--- 	"id" serial NOT NULL,
--- 	"name" varchar(100) NOT NULL,
--- 	"email" TEXT NOT NULL UNIQUE,
--- 	"password" TEXT NOT NULL,
--- 	"typeUser" userType NOT NULL,
--- 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
--- 	"updateAt" TIMESTAMP NOT NULL,
--- 	CONSTRAINT "users_pk" PRIMARY KEY ("id")
--- );
+ALTER TABLE users ADD CONSTRAINT "typeUser_chk" CHECK ("typeUser" IN ('D', 'P'));

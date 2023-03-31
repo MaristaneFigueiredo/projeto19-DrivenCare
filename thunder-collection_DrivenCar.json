@@ -1,25 +1,44 @@
 {
     "client": "Thunder Client",
     "collectionName": "DrivenCar",
-    "dateExported": "2023-03-30T20:05:46.568Z",
+    "dateExported": "2023-03-31T14:02:11.285Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "bf6a0592-dcd4-4a2e-9b3b-f0172be4e782",
-            "colId": "6434615f-3396-4ddd-b6a9-ba373e5391b6",
+            "_id": "a73b1dde-0527-4e2a-8bb9-0fb7011c1f65",
+            "colId": "c89c3847-2773-4fd8-bfc2-6d9c0c231dfa",
             "containerId": "",
             "name": "signup",
-            "url": "http://localhost:6000/users",
+            "url": "http://localhost:6000/users/signup",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2023-03-30T15:16:48.383Z",
-            "modified": "2023-03-30T19:42:02.084Z",
+            "created": "2023-03-31T13:02:54.697Z",
+            "modified": "2023-03-31T13:53:14.911Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"name\": \"teste1\",\n    \"email\": \"teste1@gmail.com\",\n    \"password\": \"123456\",\n    \"typeUser\":\"p\"\n}",
+                "raw": "{\n    \"name\": \"teste8\",\n    \"email\": \"teste8@gmail.com\",\n    \"password\": \"123456\",\n    \"typeUser\":\"p\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5639f34a-5183-40e3-8684-6b437479a03e",
+            "colId": "c89c3847-2773-4fd8-bfc2-6d9c0c231dfa",
+            "containerId": "",
+            "name": "signin",
+            "url": "http://localhost:6000/users/signin",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-03-31T13:04:19.917Z",
+            "modified": "2023-03-31T13:52:09.271Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"teste1@gmail.com\",\n    \"password\": \"123456\"\n}",
                 "form": []
             },
             "tests": []

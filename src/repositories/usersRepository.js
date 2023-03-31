@@ -8,6 +8,20 @@ async function findByEmail({email}) {
 }
 
 
+async function createUser({userId, typeUser}) {   
+
+   if (typeUser === 'P') {
+    await connectionDb.query(`
+          SELECT * FROM patients WHERE email =$1
+    `, [userId])
+    } else {
+        await connectionDb.query(`
+        SELECT * FROM doctors WHERE email =$1
+  `, [userId])
+    }   
+}
+
+
 
 async function signup({name, email, password, typeUser}) {
     //console.log('repository - {name, email, password, typeUser}', {name, email, password, typeUser})
@@ -27,5 +41,5 @@ async function createSession({userId, token}) {
 
 
 
-export default {findByEmail, signup, createSession}
+export default {findByEmail, signup, createSession,createUser}
 
