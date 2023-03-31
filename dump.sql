@@ -5,7 +5,7 @@ CREATE TABLE "users" (
 	"password" TEXT NOT NULL,
 	"typeUser" varchar(1) NOT NULL,
 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
-	"updateAt" TIMESTAMP NOT NULL,
+	"updateAt" TIMESTAMP,
 	CONSTRAINT "users_pk" PRIMARY KEY ("id")
 );
 
@@ -25,7 +25,7 @@ CREATE TABLE "patients" (
 	"id" serial NOT NULL,
 	"userId" integer NOT NULL,
 	"createdAt" TIMESTAMP NOT NULL,
-	"updateAt" TIMESTAMP NOT NULL,
+	"updateAt" TIMESTAMP,
 	CONSTRAINT "patients_pk" PRIMARY KEY ("id")
 ) ;
 
@@ -35,7 +35,7 @@ CREATE TABLE "specialties" (
 	"id" serial NOT NULL,
 	"name" varchar(100) NOT NULL UNIQUE,
 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
-	"updateAt" TIMESTAMP NOT NULL,
+	"updateAt" TIMESTAMP,
 	CONSTRAINT "specialties_pk" PRIMARY KEY ("id")
 ) ;
 
@@ -46,7 +46,7 @@ CREATE TABLE "doctors" (
 	"specialtyId" integer NOT NULL,	
 	"userId" integer NOT NULL,
 	"locationId" integer NOT NULL ,
-	"updateAt" TIMESTAMP NOT NULL,
+	"updateAt" TIMESTAMP,
 	CONSTRAINT "doctors_pk" PRIMARY KEY ("id")
 ) ;
 
@@ -56,7 +56,7 @@ CREATE TABLE "locations" (
 	"id" serial NOT NULL,
 	"name" varchar(100) NOT NULL,
 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
-	"updateAt" TIMESTAMP NOT NULL,
+	"updateAt" TIMESTAMP,
 	CONSTRAINT "locations_pk" PRIMARY KEY ("id")
 );
 
@@ -69,7 +69,7 @@ CREATE TABLE "schedules" (
 	"avaiable" BOOLEAN NOT NULL DEFAULT 'true',
 	"doctorId" integer NOT NULL,
 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
-	"updateAt" TIMESTAMP NOT NULL,
+	"updateAt" TIMESTAMP,
 	CONSTRAINT "schedules_pk" PRIMARY KEY ("id")
 ) ;
 
@@ -81,7 +81,7 @@ CREATE TABLE "appointments" (
 	"patientId" integer NOT NULL,
 	"status" varchar(2) NOT NULL,
 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
-	"updateAt" TIMESTAMP NOT NULL,
+	"updateAt" TIMESTAMP,
 	CONSTRAINT "appointments_pk" PRIMARY KEY ("id")
 ) ;
 

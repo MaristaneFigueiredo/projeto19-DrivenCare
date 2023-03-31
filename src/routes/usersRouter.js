@@ -7,5 +7,6 @@ const usersRouter = Router()
 
 
 //usersRouter.post('/', usersController.signup)
-usersRouter.post('/', validationSchema(userSchema) ,usersController.signup)
+usersRouter.post('/signup', validationSchema(userSchema) ,usersController.signup)
+usersRouter.post('/signin', usersController.signin)
 export default usersRouter
