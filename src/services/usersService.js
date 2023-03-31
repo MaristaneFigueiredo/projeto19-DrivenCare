@@ -31,10 +31,8 @@ async function signin({email, password}) {
     const [user] = users
     
      
-    const passwordValid = await bcrypt.compare(password, user.password) === true
-    //console.log('passwordValid', passwordValid)
+    const passwordValid = await bcrypt.compare(password, user.password) === true    
     if(!passwordValid) throw new Error ('Incorrect email or password!')
-
     
     const token = uuidV4()    
     
@@ -43,7 +41,7 @@ async function signin({email, password}) {
 
     return token
     
-    //await usersRepository.signin({password})
+    
 
 }
 
