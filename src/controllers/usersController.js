@@ -1,16 +1,12 @@
 import usersService from "../services/usersService.js"
 
 
-async function signup(req, res){    
-    
-    const {name, email, password, typeUser} = req.body    
-
-    try {
-        //console.log('controller - {name, email, password, typeUser}', {name, email, password, typeUser})
+async function signup(req, res){        
+    const {name, email, password, typeUser} = req.body 
+    try {       
        await usersService.signup({name, email, password, typeUser})
        return res.sendStatus(201)
-    } catch (error) {
-        //return res.status(500).send('Internal server error!')
+    } catch (error) {        
         return res.status(500).send(error.message)
     }
 } 

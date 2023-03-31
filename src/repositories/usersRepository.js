@@ -12,19 +12,21 @@ async function createUser({userId, typeUser}) {
 
    if (typeUser === 'P') {
     await connectionDb.query(`
-          SELECT * FROM patients WHERE email =$1
-    `, [userId])
+            INSERT INTO patients ("userId") 
+            VALUES ($1)
+             `, [userId])
     } else {
-        await connectionDb.query(`
-        SELECT * FROM doctors WHERE email =$1
-  `, [userId])
+        await connectionDb.query(`        
+        INSERT INTO doctors ("userId") 
+        VALUES ($1)
+        `, [userId])
     }   
 }
 
 
 
 async function signup({name, email, password, typeUser}) {
-    //console.log('repository - {name, email, password, typeUser}', {name, email, password, typeUser})
+    
     await connectionDb.query( `
         INSERT INTO users (name, email, password, "typeUser") 
         VALUES ($1, $2, $3,$4)

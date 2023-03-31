@@ -24,7 +24,7 @@ CREATE TABLE "sessions" (
 CREATE TABLE "patients" (
 	"id" serial NOT NULL,
 	"userId" integer NOT NULL,
-	"createdAt" TIMESTAMP NOT NULL,
+	"createdAt" TIMESTAMP NOT NULL DEFAULT now() ,
 	"updateAt" TIMESTAMP,
 	CONSTRAINT "patients_pk" PRIMARY KEY ("id")
 ) ;
@@ -46,6 +46,7 @@ CREATE TABLE "doctors" (
 	"specialtyId" integer NOT NULL,	
 	"userId" integer NOT NULL,
 	"locationId" integer NOT NULL ,
+	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
 	"updateAt" TIMESTAMP,
 	CONSTRAINT "doctors_pk" PRIMARY KEY ("id")
 ) ;

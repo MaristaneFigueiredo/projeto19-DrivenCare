@@ -30,19 +30,15 @@ async function signin({email, password}) {
     const {rows: users } = await usersRepository.findByEmail({email})        
     if(users.length === 0) throw new Error ('Incorrect email or password!')
     
-    const [user] = users
-    
+    const [user] = users    
      
     const passwordValid = await bcrypt.compare(password, user.password) === true    
     if(!passwordValid) throw new Error ('Incorrect email or password!')
     
-    const token = uuidV4()    
-    
- 
+    const token = uuidV4() 
     await usersRepository.createSession({userId: user.id, token})
 
-    return token
-    
+    return token  
     
 
 }
