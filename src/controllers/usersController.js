@@ -7,7 +7,8 @@ async function signup(req, res){
        await usersService.signup({name, email, password, typeUser})
        return res.sendStatus(201)
     } catch (error) {        
-        return res.status(500).send(error.message)
+        //return res.status(500).send(error.message)
+        next(error)
     }
 } 
 
@@ -18,7 +19,8 @@ async function signin(req, res){
 
         return res.status(200).send({token})
     } catch (error) {
-        return res.status(500).send(error.message)
+        //return res.status(500).send(error.message)
+        next(error)
     }
 
 } 
