@@ -1,3 +1,5 @@
+import httpStatus from "http-status"
+
 export function handleApplicationErros(error, req, res, next) {
     if (error.name === "ConflictError" || error.name === "DuplicatedEmailError") {
         return res.status(httpStatus.CONFLICT).send({
