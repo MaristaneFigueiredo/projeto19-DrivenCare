@@ -7,19 +7,19 @@ export function handleApplicationErros(error, req, res, next) {
         });
       }
 
-      if (err.name === "InvalidCredentialsError") {
+      if (error.name === "InvalidCredentialsError") {
         return res.status(httpStatus.UNAUTHORIZED).send({
           message: err.message,
         });
       }
       
-      if (err.name === "UnauthorizedError") {
+      if (error.name === "UnauthorizedError") {
         return res.status(httpStatus.UNAUTHORIZED).send({
           message: err.message,
         });
       }
       
-      if (err.name === "NotFoundError") {
+      if (error.name === "NotFoundError") {
         return res.status(httpStatus.NOT_FOUND).send({
           message: err.message,
         });
