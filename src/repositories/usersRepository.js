@@ -41,7 +41,23 @@ async function createSession({userId, token}) {
     `, [userId, token])
 }
 
+async function findSessionByToken(token) {
+    return await connectionDb.query(
+      `
+          SELECT * FROM sessions WHERE token = $1
+      `,
+      [token]
+    );
+  }
 
+  async function findById(id) {
+    return await connectionDb.query(
+      `    
+      SELECT * FROM users WHERE id=$1
+    `,
+      [id]
+    );
+  }
 
-export default {findByEmail, signup, createSession,createUser}
+export default {findByEmail, signup, createSession,createUser, findSessionByToken, findById}
 

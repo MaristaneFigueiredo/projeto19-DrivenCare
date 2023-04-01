@@ -5,8 +5,10 @@ import {v4 as uuidV4} from "uuid" //biblioteca p o token
 
 async function createUser({email, typeUser}) {
 
-    const {rows : users} = await usersRepository.findByEmail({email})
+    const {rows : users} = await usersRepository.findByEmail({email})    
     const [user] = users 
+     
+    
     await usersRepository.createUser({userId:user.id, typeUser:user.typeUser })
     
 
