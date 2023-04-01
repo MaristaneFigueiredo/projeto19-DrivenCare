@@ -1,23 +1,24 @@
+import httpStatus from "http-status"
 import usersService from "../services/usersService.js"
 
 
-async function signup(req, res){        
+async function signup(req, res, next){        
     const {name, email, password, typeUser} = req.body 
     try {       
-       await usersService.signup({name, email, password, typeUser})
-       return res.sendStatus(201)
+       await usersService.signup({name, email, password, typeUser})    
+       return res.sendStatus(httpStatus.CREATED)
+      
     } catch (error) {        
         //return res.status(500).send(error.message)
         next(error)
     }
 } 
 
-async function signin(req, res){
+async function signin(req, res, next){
     try {       
         const {email, password} = req.body
         const token = await usersService.signin({email, password})
-
-        return res.status(200).send({token})
+        return res.status(httpStatus.OK).send({token})        
     } catch (error) {
         //return res.status(500).send(error.message)
         next(error)
