@@ -9,15 +9,13 @@ async function findByEmail({email}) {
 
 
 async function createUser({userId, typeUser, specialtyId, locationId}) {   
-
-  console.log('repository createUser user =>', specialtyId, locationId)
+  
    if (typeUser === 'P') {
     await connectionDb.query(`
             INSERT INTO patients ("userId") 
             VALUES ($1)
              `, [userId])
-    } else {
-      console.log('insert doctor')
+    } else {      
         await connectionDb.query(`        
         INSERT INTO doctors ("userId", "specialtyId", "locationId") 
         VALUES ($1, $2, $3)

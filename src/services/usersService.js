@@ -7,9 +7,8 @@ import errors from "../errors/index.js"
 async function createUser({email, typeUser, specialtyId, locationId}) {
 
     const {rows : users} = await usersRepository.findByEmail({email})    
-    const [user] = users 
-     
-    console.log('service createUser user =>', specialtyId, locationId)
+    const [user] = users      
+   
     await usersRepository.createUser({userId:user.id, typeUser:user.typeUser, specialtyId, locationId})
     
 

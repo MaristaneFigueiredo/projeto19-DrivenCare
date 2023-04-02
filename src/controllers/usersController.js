@@ -4,8 +4,7 @@ import usersService from "../services/usersService.js"
 
 async function signup(req, res, next){        
     const {name, email, password, typeUser, specialtyId, locationId} = req.body 
-    try {       
-        console.log('controller createUser user =>', specialtyId, locationId) 
+    try {              
        await usersService.signup({name, email, password, typeUser, specialtyId, locationId})    
        return res.sendStatus(httpStatus.CREATED)
       
