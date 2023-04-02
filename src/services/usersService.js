@@ -4,18 +4,18 @@ import {v4 as uuidV4} from "uuid" //biblioteca p o token
 import errors from "../errors/index.js"
 
 
-async function createUser({email, typeUser}) {
+async function createUser({email, typeUser, specialtyId, locationId}) {
 
     const {rows : users} = await usersRepository.findByEmail({email})    
     const [user] = users 
      
-    
-    await usersRepository.createUser({userId:user.id, typeUser:user.typeUser })
+    console.log('service createUser user =>', specialtyId, locationId)
+    await usersRepository.createUser({userId:user.id, typeUser:user.typeUser, specialtyId, locationId})
     
 
 }
 
-async function signup({name, email, password, typeUser}) {    
+async function signup({name, email, password, typeUser, specialtyId, locationId}) {    
     
     const {rows: users } = await usersRepository.findByEmail({email}) 
     if(users.length !==0) throw errors.duplicatedEmailError()
@@ -25,7 +25,7 @@ async function signup({name, email, password, typeUser}) {
     
     await usersRepository.signup({name, email, password: hashPassword, typeUser})      
 
-    createUser({email,typeUser})
+    createUser({email,typeUser, specialtyId, locationId})
 }
 
 async function signin({email, password}) {       

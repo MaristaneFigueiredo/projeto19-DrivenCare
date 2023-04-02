@@ -25,7 +25,7 @@ async function authValidation(req, res, next) {
       res.locals.user = user;
       next();
     } catch (err) {
-      res.status(500).send(err.message);
+      next(err);
     }
   }
   
