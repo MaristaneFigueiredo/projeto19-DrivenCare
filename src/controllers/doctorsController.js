@@ -5,8 +5,8 @@ import doctorsService from "../services/doctorsService.js"
 async function getDoctors(req, res, next){        
     const {name, specialtyId, locationId} = req.query 
     try {              
-       const doctors = await doctorsService.getByDoctor({name, specialtyId, locationId})    
-       return res.sendStatus(httpStatus.OK).send(doctors)
+       const doctors = await doctorsService.getDoctors({name, specialtyId, locationId})    
+       return res.send(doctors)
       
     } catch (error) {      
         

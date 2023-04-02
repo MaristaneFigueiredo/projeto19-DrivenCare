@@ -1,4 +1,3 @@
-import { Router } from "express";
 import doctorsRepository from "../repositories/doctorsRepository.js";
 
 
