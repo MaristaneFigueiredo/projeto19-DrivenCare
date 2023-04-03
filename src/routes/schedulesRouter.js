@@ -8,7 +8,7 @@ const schedulesRoutes = Router()
 
 
 schedulesRoutes.all("/*", authMiddleware.authValidation)
-schedulesRoutes.get('/', schedulesController.getDoctorSchedules)
+schedulesRoutes.get('/doctor-schedules/:doctorId', schedulesController.getDoctorSchedules)
 
 
 

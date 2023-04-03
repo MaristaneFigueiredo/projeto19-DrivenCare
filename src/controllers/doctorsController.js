@@ -9,7 +9,7 @@ async function getDoctors(req, res, next){
        return res.send(doctors)
       
     } catch (error) {      
-        
+        console.error(error)
         next(error)
     }
 } 

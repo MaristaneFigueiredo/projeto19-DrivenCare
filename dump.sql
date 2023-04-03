@@ -67,7 +67,7 @@ CREATE TABLE schedules (
 	"doctorId" int NOT NULL,
 	"date" DATE NOT NULL,
 	"timeInitial" TIME NOT NULL,
-	"timeEnd" bigint NOT NULL,
+	"timeEnd" TIME NOT NULL,
 	"avaiable" BOOLEAN NOT NULL DEFAULT 'true',
 	"createdAt" TIMESTAMP NOT NULL DEFAULT NOW(),
 	"updatedAt" TIMESTAMP,

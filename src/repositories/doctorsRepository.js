@@ -2,10 +2,10 @@ import connectionDb from "../config/database.js"
 
 
 async function getDoctors({name, specialtyId, locationId}) {
-
+    
     let query = `
-        SELECT users.name, locations.name, specialties.name        
-        FROM doctors INNER JOIN users ON users.id = doctors."idUser"
+        SELECT users.name as doctor, locations.name as location, specialties.name as specialty        
+        FROM doctors INNER JOIN users ON users.id = doctors."userId"
                      INNER JOIN locations ON doctors."locationId" = locations.id 
                     INNER JOIN specialties ON doctors."specialtyId" = specialties.id 
         WHERE    
@@ -23,7 +23,7 @@ async function getDoctors({name, specialtyId, locationId}) {
         if(locationId) {
             query += ` "locationId" = ${locationId}`
         }
-    
+        console.log(query)
         const doctors = await connectionDb.query(query)
         return doctors.rows
 }
