@@ -10,7 +10,7 @@ const appointmentsRouter = Router()
 appointmentsRouter
 .all("/*", authMiddleware.authValidation)
 .post("/", await validationSchema(appointmentSchema), appointmentsController.createAppoitment)
-.patch("/update-status/:id", appointmentsController.updateAppointmentStatus)
+.patch("/update-status/:id", await validationSchema(appointmentUpdateStatusSchema), appointmentsController.updateAppointmentStatus)
 .get("/list-patient-appointments/:patientId", appointmentsController.listPatientAppointments)
 .get("/list-doctors-appointments/:doctorId",  appointmentsController.listDoctorAppointments)
 
@@ -18,4 +18,3 @@ appointmentsRouter
 export default appointmentsRouter
 
 
-// .patch("/update-status/:id", await validationSchema(appointmentUpdateStatusSchema), appointmentsController.updateAppointmentStatus)
