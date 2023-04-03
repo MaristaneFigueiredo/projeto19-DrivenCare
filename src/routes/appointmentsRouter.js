@@ -13,7 +13,7 @@ appointmentsRouter
 //.post("/", appointmentsController.createAppoitment)
 //.patch("/update-status/:id", await validateBody(appointmentUpdateStatusSchema), appointmentsController.updateAppoitmentStatus)
 .get("/list-patient-appointments/:patientId", appointmentsController.listPatientAppointments)
-//.get("/list-doctors-appoitments/:doctorId", appointmentsController.listDoctorAppoitments)
+.get("/list-doctors-appointments/:doctorId",  appointmentsController.listDoctorAppointments)
 
 
 export default appointmentsRouter

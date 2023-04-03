@@ -37,9 +37,22 @@ async function listPatientAppointments(req, res, next) {
     }
 }
 
+
+async function listDoctorAppointments(req, res, next) {
+    try {
+        const { doctorId } = req.params
+        const doctorAppointments = await appointmentsService.listDoctorAppointments(doctorId)
+        return res.send(doctorAppointments)
+
+    } catch (error) {
+        next(error)
+    }
+}
+
+
 export default {
     createAppoitment,
     // updateAppoitmentStatus,
      listPatientAppointments,
-    // listDoctorAppoitments
+     listDoctorAppointments
 }

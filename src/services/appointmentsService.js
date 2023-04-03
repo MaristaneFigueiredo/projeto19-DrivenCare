@@ -69,9 +69,14 @@ async function listPatientAppointments(patientId) {
     return await appointmentsRepository.listPatientAppointments(patientId)
 }
 
+
+async function listDoctorAppointments(doctorId) {
+    return await appointmentsRepository.listDoctorAppointments(doctorId)
+}
+
 export default {
     createAppoitment,
     // updateAppoitmentStatus,
      listPatientAppointments,
-    // listDoctorsAppoitments
+     listDoctorAppointments
 }
