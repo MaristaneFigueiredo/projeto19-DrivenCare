@@ -65,11 +65,13 @@ function isValidStatus(status) {
     return status === 'AGENDADO' || 'CANCELADO' || 'CONFIRMADO'
 }
 
-
+async function listPatientAppointments(patientId) {
+    return await appointmentsRepository.listPatientAppointments(patientId)
+}
 
 export default {
     createAppoitment,
     // updateAppoitmentStatus,
-    // listPatientAppoitments,
+     listPatientAppointments,
     // listDoctorsAppoitments
 }

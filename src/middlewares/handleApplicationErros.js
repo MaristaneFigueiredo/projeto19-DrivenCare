@@ -13,7 +13,7 @@ export function handleApplicationErros(error, req, res, next) {
         });
       }
       
-      if (error.name === "UnauthorizedError") {
+      if (error.name === "UnauthorizedError") {       
         return res.status(httpStatus.UNAUTHORIZED).send({
           message: err.message,
         });

@@ -1,16 +1,17 @@
-//import httpStatus from "http-status";
+import httpStatus from "http-status"
 import errors from "../errors/index.js";
 import usersRepository from "../repositories/usersRepository.js"
 
 
 async function authValidation(req, res, next) {
     const { authorization } = req.headers;
-    const token = authorization?.replace("Bearer ", "");
-  
-    if (!token) throw errors.unathorizedError()
-    
-   
+    const token = authorization?.replace("Bearer ", "");   
     try {
+
+      if (!token) {  
+        throw errors.unathorizedError()
+      }
+
       const {
         rows: [session],
       } = await usersRepository.findSessionByToken(token);
@@ -24,8 +25,9 @@ async function authValidation(req, res, next) {
   
       res.locals.user = user;
       next();
-    } catch (err) {
-      next(err);
+    } catch (err) {      
+      return res.status(httpStatus.UNAUTHORIZED).send("Not authorized!")
+     // next(err);
     }
   }
   

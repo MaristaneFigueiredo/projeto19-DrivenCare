@@ -14,6 +14,7 @@ function duplicatedEmailError(email) {
 }
 
 function unathorizedError() {
+  console.log('unathorizedError')
     return {
         name: "UnauthrizedError",
         message:"You must be signed in to continue"
