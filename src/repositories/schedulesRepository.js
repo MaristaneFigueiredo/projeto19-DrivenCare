@@ -22,6 +22,21 @@ async function getDoctorSchedules({doctorId}) {
     
 }
 
+async function setUnavaiableSchedule(scheduleId) {
+  const queryText =` UPDATE schedules SET avaiable = false, "updatedAt" = NOW()
+                      WHERE id = $1
+                  `
+  return await connectionDb.query(queryText, [ scheduleId ])
+}
 
 
-export default {getDoctorSchedules}
+async function findScheludeById(id) {
+  const queryText = `SELECT * FROM schedules WHERE id = $1`
+  return await connectionDb.query(queryText, [ id ])
+}
+
+export default {
+  getDoctorSchedules,
+  setUnavaiableSchedule,
+  findScheludeById
+}

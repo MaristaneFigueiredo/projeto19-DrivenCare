@@ -1,0 +1,222 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Driven Care teste",
+    "dateExported": "2023-04-03T17:40:37.652Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b1124739-ba67-48cb-82ea-059a967cb546",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/health",
+            "url": "http://localhost:4000/health",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-03T12:54:05.594Z",
+            "modified": "2023-04-03T12:54:05.594Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e600404a-329e-43a4-a377-b0d7be81489b",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/schedules",
+            "url": "http://localhost:4000/schedules",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-04-03T12:54:05.596Z",
+            "modified": "2023-04-03T12:54:05.596Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"doctorId\": 3,\n    \"date\": \"2023-04-03\",\n    \"timeInitial\": \"08:30\",\n    \"timeEnd\": \"09:00\",\n    \"avaiable\": true\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8ce87e20-e48d-4a2f-bf5b-0e2a35ec9c7b",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/appoitments",
+            "url": "http://localhost:7000/appointments",
+            "method": "POST",
+            "sortNum": 17500,
+            "created": "2023-04-03T12:54:05.597Z",
+            "modified": "2023-04-03T17:37:36.004Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 74abc9ff-f555-41c5-b97b-449c1ddc43dd"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"scheduleId\":1,\n    \"patientId\": 9,\n    \"status\": \"AGENDADO\"\n}\n\n\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d6e54ee-bc72-4da3-baa8-38b94ea637a5",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/appoitments/update-status/:id",
+            "url": "http://localhost:4000/appoitments/update-status/2",
+            "method": "PATCH",
+            "sortNum": 18750,
+            "created": "2023-04-03T12:54:05.598Z",
+            "modified": "2023-04-03T12:54:05.598Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkpvYW96aW5obyIsImVtYWlsIjoiam9hb3ppbmhvQHRlc3RlLmNvbSIsImlhdCI6MTY4MDUyMjg0NSwiZXhwIjoxNjgwNTQwODQ1fQ.IuDJ1Msu1immG5SvIY4AZ6YzwYjsGFlFrBQ6ldH9Jbg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"status\": \"CANCELADO\"\n}\n\n\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ba60295e-73d7-444c-ae9c-7682955a61de",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/sign-up",
+            "url": "http://localhost:7000/users/signup",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-03T12:54:05.599Z",
+            "modified": "2023-04-03T16:25:36.023Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"teste3\",\n  \"email\": \"teste3@gmail.com\",\n  \"password\": \"123456\",\n  \"typeUser\": \"P\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a29aeaa3-2607-4ba8-b868-5de1622bb729",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/sign-in",
+            "url": "http://localhost:7000/users/signin",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-04-03T12:54:05.600Z",
+            "modified": "2023-04-03T16:25:51.284Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"teste1@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7ffa601c-17ca-427a-ba34-c1179a5fe10f",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/schedules/doctor-schedules/:doctorid",
+            "url": "http://localhost:7000/schedules/doctor-schedules/9",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-04-03T12:54:05.601Z",
+            "modified": "2023-04-03T13:46:20.802Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 7bd3dbb3-f228-4e2a-8952-8f8d499950c8"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bfa69472-1374-4eb4-83b2-0e8c29b4f01d",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/appoitments/list-patient-appoitments/:patientId\"",
+            "url": "http://localhost:4000/appoitments/list-patient-appoitments/1",
+            "method": "GET",
+            "sortNum": 45000,
+            "created": "2023-04-03T12:54:05.602Z",
+            "modified": "2023-04-03T12:54:05.602Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkpvYW96aW5obyIsImVtYWlsIjoiam9hb3ppbmhvQHRlc3RlLmNvbSIsImlhdCI6MTY4MDUyMTExNCwiZXhwIjoxNjgwNTM5MTE0fQ.BtLJV9jeCtpikCFTK9IybD--gdJA1pYEnJeGJK40OQo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1dd9a85d-be40-40c4-b13a-845df81645f3",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/appoitments/list-doctors-appoitments/:doctorId",
+            "url": "http://localhost:4000/appoitments/list-doctors-appoitments/1",
+            "method": "GET",
+            "sortNum": 47500,
+            "created": "2023-04-03T12:54:05.603Z",
+            "modified": "2023-04-03T12:54:05.603Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkVsdG9uIiwiZW1haWwiOiJ0ZXN0ZTBAdGVzdGUuY29tIiwiaWF0IjoxNjgwMzk3MjUyLCJleHAiOjE2ODA0MTUyNTJ9.gYXoCxhKo8jT0Mo_PkS9KiwAc9cwM7rExDQ6PBKwIIE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "50ac7d0e-a27c-4523-94f1-510ae4f9ece9",
+            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "containerId": "",
+            "name": "/doctors/list",
+            "url": "http://localhost:7000/doctors?locationId=1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-04-03T12:54:05.604Z",
+            "modified": "2023-04-03T13:25:52.991Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 97301519-7a63-416b-a8e0-11ccb14e9224"
+                }
+            ],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "P",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "specialtyId",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "locationId",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

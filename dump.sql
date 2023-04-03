@@ -79,7 +79,7 @@ CREATE TABLE "appointments" (
 	"id" serial NOT NULL,
 	"scheduleId" integer NOT NULL,
 	"patientId" integer NOT NULL,
-	"status" varchar(2) NOT NULL,
+	"status" varchar(10) NOT NULL,
 	"createdAt" TIMESTAMP NOT NULL DEFAULT now(),
 	"updateAt" TIMESTAMP,
 	CONSTRAINT "appointments_pk" PRIMARY KEY ("id")

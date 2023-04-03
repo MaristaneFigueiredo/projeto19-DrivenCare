@@ -2,9 +2,10 @@ import httpStatus from "http-status";
 import appointmentsService from "../services/appointmentsService.js";
 
 
-async function createAppoitment(req, res) {
+async function createAppoitment(req, res, next) {
     try {
         const { scheduleId, patientId, status } = req.body
+        
         await appointmentsService.createAppoitment({ scheduleId, patientId, status })
 
         return res.sendStatus(httpStatus.OK)

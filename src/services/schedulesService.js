@@ -8,9 +8,17 @@ async function getDoctorSchedules({doctorId}){
   
 } 
 
+async function setUnvaiableToSchedule(scheduleId) {
+      return await schedulesRepository.setUnavaiableSchedule(scheduleId)
+  }
 
 
 
 
 
-export default {getDoctorSchedules}
+
+export default {
+      getDoctorSchedules,
+      setUnvaiableToSchedule
+
+}
