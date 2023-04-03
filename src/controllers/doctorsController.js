@@ -8,8 +8,7 @@ async function getDoctors(req, res, next){
        const doctors = await doctorsService.getDoctors({name, specialtyId, locationId})    
        return res.send(doctors)
       
-    } catch (error) {      
-        console.error(error)
+    } catch (error) {              
         next(error)
     }
 } 
