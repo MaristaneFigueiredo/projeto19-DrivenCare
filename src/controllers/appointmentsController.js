@@ -58,8 +58,8 @@ async function updateAppointmentStatus(req, res,next) {
 }
 
 export default {
-    createAppoitment,
+    createAppoitment,    
+    listPatientAppointments,
+    listDoctorAppointments,
     updateAppointmentStatus,
-     listPatientAppointments,
-     listDoctorAppointments
 }

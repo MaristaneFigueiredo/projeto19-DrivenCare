@@ -1,34 +1,34 @@
 {
     "client": "Thunder Client",
     "collectionName": "Driven Care teste",
-    "dateExported": "2023-04-03T17:40:37.652Z",
+    "dateExported": "2023-04-03T20:08:32.834Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "b1124739-ba67-48cb-82ea-059a967cb546",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "8bb921ae-64c7-4880-baba-4845ba1b96c4",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/health",
             "url": "http://localhost:4000/health",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2023-04-03T12:54:05.594Z",
-            "modified": "2023-04-03T12:54:05.594Z",
+            "created": "2023-04-03T17:41:06.714Z",
+            "modified": "2023-04-03T17:41:06.714Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "e600404a-329e-43a4-a377-b0d7be81489b",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "7c051332-324f-4824-901e-16996ee2b17d",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/schedules",
             "url": "http://localhost:4000/schedules",
             "method": "POST",
             "sortNum": 15000,
-            "created": "2023-04-03T12:54:05.596Z",
-            "modified": "2023-04-03T12:54:05.596Z",
+            "created": "2023-04-03T17:41:06.715Z",
+            "modified": "2023-04-03T17:41:06.715Z",
             "headers": [],
             "params": [],
             "body": {
@@ -39,15 +39,15 @@
             "tests": []
         },
         {
-            "_id": "8ce87e20-e48d-4a2f-bf5b-0e2a35ec9c7b",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "309eb8c5-a5b3-4751-b0d5-f53c91c01885",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/appoitments",
             "url": "http://localhost:7000/appointments",
             "method": "POST",
             "sortNum": 17500,
-            "created": "2023-04-03T12:54:05.597Z",
-            "modified": "2023-04-03T17:37:36.004Z",
+            "created": "2023-04-03T17:41:06.716Z",
+            "modified": "2023-04-03T17:42:55.793Z",
             "headers": [
                 {
                     "name": "Authorization",
@@ -57,25 +57,25 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"scheduleId\":1,\n    \"patientId\": 9,\n    \"status\": \"AGENDADO\"\n}\n\n\n",
+                "raw": "{\n    \"scheduleId\":2,\n    \"patientId\": 9,\n    \"status\": \"AGENDADO\"\n}\n\n\n",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "4d6e54ee-bc72-4da3-baa8-38b94ea637a5",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "3d28499c-66c7-4b2f-84a2-58dbf8e8f4ec",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/appoitments/update-status/:id",
-            "url": "http://localhost:4000/appoitments/update-status/2",
+            "url": "http://localhost:7000/appointments/update-status/2",
             "method": "PATCH",
             "sortNum": 18750,
-            "created": "2023-04-03T12:54:05.598Z",
-            "modified": "2023-04-03T12:54:05.598Z",
+            "created": "2023-04-03T17:41:06.717Z",
+            "modified": "2023-04-03T20:07:40.254Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkpvYW96aW5obyIsImVtYWlsIjoiam9hb3ppbmhvQHRlc3RlLmNvbSIsImlhdCI6MTY4MDUyMjg0NSwiZXhwIjoxNjgwNTQwODQ1fQ.IuDJ1Msu1immG5SvIY4AZ6YzwYjsGFlFrBQ6ldH9Jbg"
+                    "value": "Bearer 85c85b9d-e19c-4359-a596-c041ff774b70"
                 }
             ],
             "params": [],
@@ -87,15 +87,15 @@
             "tests": []
         },
         {
-            "_id": "ba60295e-73d7-444c-ae9c-7682955a61de",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "14f0d4a8-c5db-4237-8644-75f521d69de8",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/sign-up",
             "url": "http://localhost:7000/users/signup",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2023-04-03T12:54:05.599Z",
-            "modified": "2023-04-03T16:25:36.023Z",
+            "created": "2023-04-03T17:41:06.718Z",
+            "modified": "2023-04-03T17:41:06.718Z",
             "headers": [],
             "params": [],
             "body": {
@@ -106,15 +106,15 @@
             "tests": []
         },
         {
-            "_id": "a29aeaa3-2607-4ba8-b868-5de1622bb729",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "d2378341-5a2e-44a6-8fe4-fa746c8c2150",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/sign-in",
             "url": "http://localhost:7000/users/signin",
             "method": "POST",
             "sortNum": 30000,
-            "created": "2023-04-03T12:54:05.600Z",
-            "modified": "2023-04-03T16:25:51.284Z",
+            "created": "2023-04-03T17:41:06.719Z",
+            "modified": "2023-04-03T17:41:06.719Z",
             "headers": [],
             "params": [],
             "body": {
@@ -125,15 +125,15 @@
             "tests": []
         },
         {
-            "_id": "7ffa601c-17ca-427a-ba34-c1179a5fe10f",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "74fb4a7f-98f8-4b88-ab46-93a0b641ca57",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/schedules/doctor-schedules/:doctorid",
             "url": "http://localhost:7000/schedules/doctor-schedules/9",
             "method": "GET",
             "sortNum": 40000,
-            "created": "2023-04-03T12:54:05.601Z",
-            "modified": "2023-04-03T13:46:20.802Z",
+            "created": "2023-04-03T17:41:06.720Z",
+            "modified": "2023-04-03T17:41:06.720Z",
             "headers": [
                 {
                     "name": "Authorization",
@@ -144,53 +144,53 @@
             "tests": []
         },
         {
-            "_id": "bfa69472-1374-4eb4-83b2-0e8c29b4f01d",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "d7f3a43c-2e8a-4c3a-9cff-f0cd9e19fdba",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/appoitments/list-patient-appoitments/:patientId\"",
-            "url": "http://localhost:4000/appoitments/list-patient-appoitments/1",
+            "url": "http://localhost:7000/appointments/list-patient-appointments/9",
             "method": "GET",
             "sortNum": 45000,
-            "created": "2023-04-03T12:54:05.602Z",
-            "modified": "2023-04-03T12:54:05.602Z",
+            "created": "2023-04-03T17:41:06.721Z",
+            "modified": "2023-04-03T18:57:15.902Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkpvYW96aW5obyIsImVtYWlsIjoiam9hb3ppbmhvQHRlc3RlLmNvbSIsImlhdCI6MTY4MDUyMTExNCwiZXhwIjoxNjgwNTM5MTE0fQ.BtLJV9jeCtpikCFTK9IybD--gdJA1pYEnJeGJK40OQo"
+                    "value": "Bearer 74abc9ff-f555-41c5-b97b-449c1ddc43dd"
                 }
             ],
             "params": [],
             "tests": []
         },
         {
-            "_id": "1dd9a85d-be40-40c4-b13a-845df81645f3",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "4edaa27b-95a7-475f-ad7a-1bff24c0352a",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/appoitments/list-doctors-appoitments/:doctorId",
-            "url": "http://localhost:4000/appoitments/list-doctors-appoitments/1",
+            "url": "http://localhost:7000/appointments/list-doctors-appointments/9",
             "method": "GET",
             "sortNum": 47500,
-            "created": "2023-04-03T12:54:05.603Z",
-            "modified": "2023-04-03T12:54:05.603Z",
+            "created": "2023-04-03T17:41:06.722Z",
+            "modified": "2023-04-03T18:57:49.108Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibmFtZSI6IkVsdG9uIiwiZW1haWwiOiJ0ZXN0ZTBAdGVzdGUuY29tIiwiaWF0IjoxNjgwMzk3MjUyLCJleHAiOjE2ODA0MTUyNTJ9.gYXoCxhKo8jT0Mo_PkS9KiwAc9cwM7rExDQ6PBKwIIE"
+                    "value": "Bearer 74abc9ff-f555-41c5-b97b-449c1ddc43dd"
                 }
             ],
             "params": [],
             "tests": []
         },
         {
-            "_id": "50ac7d0e-a27c-4523-94f1-510ae4f9ece9",
-            "colId": "a346ee3c-180c-4b32-b968-bcf2665ae07c",
+            "_id": "a105079d-03b7-4b55-a71b-3827e9c2ee38",
+            "colId": "536844e7-8aca-4e98-a217-b344bd796425",
             "containerId": "",
             "name": "/doctors/list",
             "url": "http://localhost:7000/doctors?locationId=1",
             "method": "GET",
             "sortNum": 50000,
-            "created": "2023-04-03T12:54:05.604Z",
-            "modified": "2023-04-03T13:25:52.991Z",
+            "created": "2023-04-03T17:41:06.723Z",
+            "modified": "2023-04-03T17:41:06.723Z",
             "headers": [
                 {
                     "name": "Authorization",
