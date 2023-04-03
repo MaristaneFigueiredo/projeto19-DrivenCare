@@ -9,6 +9,7 @@ async function authValidation(req, res, next) {
     try {
 
       if (!token) {  
+        //console.log('aqui')
         throw errors.unathorizedError()
       }
 

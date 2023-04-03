@@ -28,6 +28,14 @@ async function getDoctors({name, specialtyId, locationId}) {
         return doctors.rows
 }
 
+async function findDoctorByIdUser(id) {
+    const queryText = `SELECT * FROM doctors WHERE "userId" = $1`
+    const doctor = await connectionDb.query(queryText, [ id ])
+    return doctor.rows
+}
 
 
-export default {getDoctors}
+export default {
+    getDoctors,
+    findDoctorByIdUser
+}

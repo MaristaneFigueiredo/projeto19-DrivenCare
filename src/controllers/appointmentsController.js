@@ -9,17 +9,7 @@ async function createAppoitment(req, res, next) {
         await appointmentsService.createAppoitment({ scheduleId, patientId, status })
 
         return res.sendStatus(httpStatus.OK)
-    } catch (error) {
-        // if( error.name === "AppoitmentScheduleUnavaiable") {
-        //     return response.status(httpStatus.BAD_REQUEST).send("Esta agenda não está disponível")    
-        // }
-        // if( error.name === "AppoitmentStatusInvalid") {
-        //     return response.status(httpStatus.BAD_REQUEST).send("Status de agendamento inválido")    
-        // }
-        // if(error.name === "NotFound") {
-        //     return response.status(httpStatus.BAD_REQUEST).send("Agendamento não encontrado")    
-        // }      
-        // return res.status(httpStatus.INTERNAL_SERVER_ERROR).send("Internal server error")
+    } catch (error) {    
 
         next(error)
     }
@@ -50,9 +40,26 @@ async function listDoctorAppointments(req, res, next) {
 }
 
 
+async function updateAppointmentStatus(req, res,next) {
+    console.log('aqui idUser', idUser)
+    try {
+        const { id } = req.params
+        const idUser = req.user.id
+        const { status } = req.body
+
+        console.log('aqui idUser', idUser)
+        await appointmentsService.updateAppointmentStatus({ id, status, idUser })
+
+        return res.sendStatus(httpStatus.OK)
+    } catch (error) {     
+
+        next(error)
+    }
+}
+
 export default {
     createAppoitment,
-    // updateAppoitmentStatus,
+    updateAppointmentStatus,
      listPatientAppointments,
      listDoctorAppointments
 }

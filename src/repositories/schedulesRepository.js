@@ -35,6 +35,7 @@ async function findScheludeById(id) {
   return await connectionDb.query(queryText, [ id ])
 }
 
+
 export default {
   getDoctorSchedules,
   setUnavaiableSchedule,

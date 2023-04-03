@@ -55,11 +55,37 @@ async function listDoctorAppointments(doctorId) {
     return doctorAppointments.rows
 }
 
+async function findAppoitmentById(id) {
+    const queryText = `SELECT * FROM appointments WHERE id = $1`
+    return await connectionDb.query(queryText, [ id ])
+}
+
+async function updateAppointmentStatus(id, status) {
+    try {        
+        const queryText = `UPDATE appointments SET status = $1, "updatedAt" = NOW()
+                            WHERE id = $2`
+        await connectionDb.query(queryText, [ status, id ])
+
+        if(status === "CANCELADO") {
+            const appointment = await findAppoitmentById(id)
+            const scheduleId = appointment.rows[0].scheduleId
+            await schedulesService.setUnvaiableToSchedule(scheduleId)
+        }
+
+      
+
+        return
+    } catch (error) {
+        
+        throw Error
+    }
+}
+
 
 export default {
     createAppoitment,
-    // findAppoitmentById,
-    // updateAppoitmentStatus,
+    findAppoitmentById,
+    updateAppointmentStatus,
     listPatientAppointments,
     listDoctorAppointments
 }
